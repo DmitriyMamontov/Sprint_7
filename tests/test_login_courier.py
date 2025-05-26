@@ -24,7 +24,7 @@ class TestCourierLogin:
         with allure.step("Проверка статус кода"):
             assert response.status_code == 404
         with allure.step("Проверка сообщения в ответе"):
-            assert response.json()["message"] == "Учетная запись не найдена"
+            assert response.json()["message"] == ErrorResponses.USER_NOT_FOUND
 
     @allure.title("Ошибка при входе с пустым полем пароль")
     def test_error_login_empty_password(self, registered_courier, courier_api):
@@ -36,7 +36,7 @@ class TestCourierLogin:
         with allure.step("Проверка статус кода"):
             assert response.status_code == 400
         with allure.step("Проверка сообщения в ответе"):
-            assert response.json()["message"] == "Недостаточно данных для входа"
+            assert response.json()["message"] == ErrorResponses.NOT_ENOUGH_INFORMATION
 
     @allure.title("Ошибка при входе с пустым полем логин")
     def test_error_login_empty_login(self, registered_courier, courier_api):

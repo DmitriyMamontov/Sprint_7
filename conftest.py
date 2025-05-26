@@ -40,7 +40,8 @@ def registered_courier(courier_api, cleanup_registered_couriers):
     }
 
     cleanup_registered_couriers.append(courier_info)
-    yield courier_info
+    return courier_info
+
 @pytest.fixture
 def order_data():
     created_tracks = []

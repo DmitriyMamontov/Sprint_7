@@ -38,3 +38,7 @@ class DataForLoginCourier:
     "login": "sssaaa#@#",
     "password": "1234"
     }
+
+class ErrorResponses:
+    USER_NOT_FOUND = 'Учетная запись не найдена'
+    NOT_ENOUGH_INFORMATION = 'Недостаточно данных для входа'
